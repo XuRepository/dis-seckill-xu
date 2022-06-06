@@ -6,6 +6,7 @@ import com.seckill.dis.common.domain.SeckillGoods;
 import com.seckill.dis.goods.persistence.GoodsMapper;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * @author noodle
  */
 @Service(interfaceClass = GoodsServiceApi.class)
+@Component
 public class GoodsServiceImpl implements GoodsServiceApi {
 
 
