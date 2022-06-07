@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserServiceApi {
     @Override
     public CodeMsg register(RegisterVo userModel) {
 
-        // 加锁
+        // 分布式锁 - catch
         String uniqueValue = UUIDUtil.uuid() + "-" + Thread.currentThread().getId();
         String lockKey = "redis-lock" + userModel.getPhone();
         boolean lock = dLock.lock(lockKey, uniqueValue, 60 * 1000);
